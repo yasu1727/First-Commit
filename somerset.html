@@ -1,0 +1,394 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Residential Land Form</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+      html, body {
+      min-height: 100%;
+	  background-image: url('https://cdn.thespaces.com/wp-content/uploads/2017/12/Most-popular-UK-homes-of-the-year-Rightmove.jpg');
+      }
+      body, div, form, input, label { 
+      padding: 0;
+      margin: 0;
+      outline: none;
+      font-family: Roboto, Arial, sans-serif;
+      font-size: 13px;
+      color: #666;
+      line-height: 22px;
+      }
+      legend { 
+      color: black;
+      padding: 3px 5px;
+      font-size: 20px;
+      }
+      h1 {
+      position: absolute;
+      margin: 0;
+      font-size: 36px;
+      color: #fff;
+      z-index: 2;
+      }
+      .testbox {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: inherit;
+      padding: 20px;
+      }
+      form {
+      width: 60%;
+      padding: 50px;
+      border-radius: 6px;
+      background: #fff;
+      box-shadow: 0 0 10px 0  #095484; 
+	   align-items: center;
+	   opacity :0.96;
+      }
+     
+	
+      input {
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      }
+      input {
+      width: calc(100% - 10px);
+      padding: 5px;
+      }
+      select {
+      width: 100%;
+      padding: 7px 0;
+      background: transparent;
+      }
+      input[type="date"] {
+      padding: 4px 5px;
+      }
+      .item:hover p, .item:hover i, .question:hover p, .question label:hover, input:hover::placeholder {
+      color:#095484;
+      }
+      .item input:hover {
+      border: 1px solid transparent;
+      box-shadow: 0 0 6px 0 #095484;
+      color:#095484;
+      }
+      .item {
+      position: relative;
+      margin: 10px 0;
+      }
+      .item span {
+      color: red;
+      }
+      input[type="date"]::-webkit-inner-spin-button {
+      display: none;
+      }
+      .item i, input[type="date"]::-webkit-calendar-picker-indicator {
+      position: absolute;
+      font-size: 20px;
+      color: #095484;
+      }
+	
+      .item i {
+      right: 2%;
+      top: 30px;
+      z-index: 1;
+      }
+      [type="date"]::-webkit-calendar-picker-indicator {
+      right: 1%;
+      z-index: 2;
+      opacity: 0;
+      cursor: pointer;
+      }
+      .question span {
+      margin-left: 30px;
+      }
+      .btn-block {
+      margin-top: 10px;
+      text-align: center;
+      }
+      button {
+      width: 150px;
+      padding: 10px;
+      border: none;
+      border-radius: 5px; 
+      background: #095484;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      }
+      button:hover {
+      background: #4286f4;
+      }
+      @media (min-width: 568px) {
+      .name-item, .city-item {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      }
+      .name-item input, .city-item input,.name-item div {
+      width: calc(50% - 20px);
+      }
+      .name-item div input {
+      width:97%;}
+      .name-item div label {
+      display:block;
+      padding-bottom:5px;
+      }
+      }
+	  .container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+   font-size: 13px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+    </style>
+  </head>
+  <body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/track-cookies.js"></script>
+<script src="https://webtracking-v01.bpmonline.com/JS/create-object.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+var config = {
+    fields: {
+      //  "Name": "css-selector", // Name of a visitor, submitting the page
+        "Email": "#email", // Visitor's email
+    //    "Zip": "css-selector", // Visitor's ZIP code
+        "MobilePhone": "#phone", // Visitor's phone number
+    //    "Company": "css-selector", // Name of a company (for business landing pages)
+    //    "Industry": "css-selector", // Company industry (for business landing pages)
+        "FullJobTitle": "#occupation", // Visitor's job title (for business landing pages)
+     //   "UseEmail": "css-selector", // Logical value: 'true' equals to visitor's opt-in to receive emails
+     //   "City": "css-selector", // City
+         
+        "UsrMinimumBedrooms":"#minRooms",  // min rooms
+        "UsrPetFriendly": "#pets", // pets
+        "UsrFirstName": "#fname", // First name
+        "UsrLastName": "#lname", // Last name
+        "UsrProperty": "#name", // Lead source
+        "UsrSalary": "#salary", // Salary
+        "UsrDomicile": "#domicile", // Domicile
+        "UsrPassportNumber": "#passportnumber", // Passport number
+        "UsrVisaNumber": "#visanumber", // Visa number
+        "UsrNoOfOccupants": "#occupants", // No of occupants
+        "UsrRentalTerm": "#rentalperiod", // Rental term
+        "UsrMoveInDate": "#moveindate", // Move-in date
+
+    
+    },
+    customFields: {},
+    landingId: "d9f743e2-c225-4058-988d-f46adcf2128a",
+    serviceUrl: "https://019208-marketing.creatio.com/0/ServiceModel/GeneratedObjectWebFormService.svc/SaveWebFormObjectData",
+    redirectUrl: ""
+};
+/**
+* The function below creates a object from the submitted data.
+* Bind this function call to the "onSubmit" event of the form or any other elements events.
+* Example: <form class="mainForm" name="landingForm" onSubmit="createObject(); return false">
+*/
+function createObject() {
+
+  var div = document.createElement('div');
+        var img = document.createElement('img');
+        img.src = 'loading.gif';
+        div.style.cssText = 'position: fixed; top: 5%; left: 35%; z-index: 5000; width: 50px; text-align: center; ';
+        div.appendChild(img);
+        document.body.appendChild(div);
+      
+    landing.createObjectFromLanding(config);
+	
+}
+/**
+* The function below inits landing page using URL parameters.
+*/
+function initLanding() {
+    landing.initLanding(config);
+}
+function selection()
+{ 
+ var domicile = document.getElementById('domicile').value;  
+ var passportTag = document.getElementById('passportTag');
+ var visaTag = document.getElementById('visaTag');
+// var proofTag = document.getElementById('proofTag');
+    if (domicile == "Non-UK") {
+    
+	
+	  passportTag.style.display = 'block';
+	  visaTag.style.display = 'block';
+	 // proofTag.style.display = 'block';
+        }
+	else
+	{
+	 passportTag.style.display = 'none';
+	  visaTag.style.display = 'none';
+	//  proofTag.style.display = 'none';
+	}
+	
+
+    return true;
+   
+}
+
+</script>
+
+    <div class="testbox">
+    <form autocomplete="off"  onSubmit="createObject(); return false" novalidate>
+     
+      <p align="center" font-size="16px">Please fill the form with the information requested below.</p>
+      <hr/>
+      <fieldset>
+        <legend>Property Information</legend>
+        <div class="item">
+          <label for="name">Property Name<span>*</span></label>
+          <input id="name" type="text" name="text" required value ="Somerset Court, W8, Kensington"/>
+		 
+      </fieldset>
+      </br>
+      <fieldset>
+      <legend>Contact Information</legend>
+      <div class="item">
+      <label for="name">Name<span>*</span></label>
+      <div class="name-item">
+      <input id="fname" type="text" name="name" placeholder="First" required/>
+      <input id="lname" type="text" name="name" placeholder="Last" required/>
+      </div>
+      </div>
+      <div class="item">
+      <label for="phone">Phone<span>*</span></label>
+      <input id="phone" type="text" name="phone" required/>
+      </div>
+      <div class="item">
+      <label for="email">Email<span>*</span></label>
+      <input id="email" type="text" name="email" required/>
+      </div>
+	   <div class="item">
+      <label for="occupation">Occupation<span>*</span></label>
+      <input id="occupation" type="text" name="occupation" required/>
+      </div>
+      <div class="item">
+      <label for="salary">Salary (£)<span>*</span></label>
+      <input id="salary" type="text" name="salary" required />
+      </div>
+	  <div class="item">
+	  <label for="domicile">Domicile<span>*</span></label>
+       <div>
+                <select name ="domicile" id="domicile" onchange="selection()">
+                  <option selected value="" disabled selected>Select domicile</option>
+                  <option value="UK">UK</option>
+                  <option value="Non-UK">Non-UK</option>
+               
+                </select>
+              </div>
+			 </div>
+	  <div class="item" id="passportTag" >
+      <label for="passportnumber">Passport Number</label>
+      <input id="passportnumber" type="text" name="passportnumber" required/>
+      </div>
+	  <div class="item" id="visaTag">
+      <label for="visanumber">Visa Number</label>
+      <input id="visanumber" type="text" name="visanumber" required/>
+      </div>
+	   
+      </fieldset>
+	  </br>
+	  <fieldset>
+      <legend>Rental Information</legend>
+	  <div class="item">
+		  <label for="moveindate">Desired move-in date</label>
+		  <input type="date" id="moveindate" name="moveindate">
+      </div>
+	  <div class="item">
+	   <label for="rentalperiod">Rental Period<span>*</span></label>
+			<div>
+                <select id = "rentalperiod" name ="rentalperiod">
+                  <option selected value="" disabled selected>Select rental period</option>
+                  <option value="3 months">3 months</option>
+                  <option value="6 months">6 months</option>
+                  <option value="12 months">12 months</option>
+                </select>
+             </div>
+        </div>   
+	  <div class="item">
+		  <label for="occupants">No of tenants who are 18+<span>*</span></label>
+		  <input id="occupants" type="number" name="occupants" required />
+      </div>
+      <div class="item"  >
+        <label for="minRooms">Minimum no of rooms</label>
+        <input id="minRooms" type="number" name="minRooms" required/>
+        </div> 
+		<label class="container">I have pet(s)
+		  <input type="checkbox" checked="checked" id="pets" name ="pets">
+		  <span class="checkmark"></span>
+		</label>
+	   </fieldset>
+	  </br>
+      <div class="btn-block">
+      <button type="submit" href="/">SUBMIT</button>
+      </div>
+    </form>
+    </div>
+    
+  </body>
+</html>
