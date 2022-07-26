@@ -1,0 +1,27 @@
+body{
+    background: rgb(78,137,204);
+    background: linear-gradient(90deg, rgba(78,137,204,1) 0%, rgba(9,9,121,1) 25%, rgba(0,212,255,1) 100%);   
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+input[type="text"],input[type="tel"],input[type="date"],input[type="email"]{
+    width:51%;
+    padding:12px 20px;
+    margin:8px 0;
+    display: inline-block;
+    border: 1px solid rgb(161, 165, 164);
+    border-radius: 4px;
+}
+
+input[type="submit"]{
+    background: #eee;
+    padding:6px 12px;
+    margin:15px 0 10px;
+    display: inline-block;
+    border: none;
+    border-radius: 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    outline: none;
+}
